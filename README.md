@@ -1,6 +1,6 @@
-# Table-Plan-Project
-Table plan generator for multiple meals
-# Seating Plan Generator
+# Table Plan Project
+
+*A simple table plan generator for multiple meals*
 
 ## Description
 
@@ -11,21 +11,19 @@ This Python script helps to automatically create seating arrangements for differ
 * Reads guest list and details from a CSV file.
 * Generates circular seating plans for one or more meals (e.g., Breakfast, Lunch, Dinner).
 * Tries to sit people next to their preferred companions (`P*`).
-* Tries to avoid seating close relations next to each other (`R!`) – this is penalised.
+* Tries to avoid seating relations next to each other (`R!`) – this is penalised.
 * Allows a maximum of one same-sex pairing per table (`S!`).
 * Avoids repeating neighbour pairs from previous meals (`N!`).
 * Shows the plan as a simple list and a basic visual diagram in the terminal.
 
 ## Getting Started
 
-1.  **Python:** Make sure you have Python 3 installed. This script uses only standard Python libraries, so no special installations are needed.
-2.  **Input File:**
-    * You will need a CSV file containing your attendee information.
-    * A **blank template** with just the necessary headers is provided as `blank_template.csv` to help you get started.
+1.  **Python:** Make sure you have Python 3 installed. This script uses only standard Python libraries (`csv`, `math`), so no special installations are needed.
+2.  **Input File:** You will need a CSV file containing your attendee information.
+    * A **blank template** with just the necessary headers is provided as `Blank_Plan.csv` to help you get started.
     * An **example of a filled CSV file** is also included as `Example_Plan.csv` for you to see how it works.
-    * You can copy either `blank_template.csv` or `Example_Plan.csv`, rename it (e.g., `my_event_attendees.csv`), and then edit it with your actual attendee data. See the "Input CSV File Format" section below for details on each column.
-3.  **Run the Script:**
-    Open your terminal or command prompt, navigate to the directory where you saved the script and your CSV file, and run:
+    * You can copy either `Blank_Plan.csv` or `Example_Plan.csv`, rename it (e.g., `my_event_attendees.csv`), and then edit it with your actual attendee data. See the "Input CSV File Format" section below for details on each column.
+3.  **Run the Script:** Open your terminal or command prompt, navigate to the directory where you saved the script and your CSV file, and run:
     ```bash
     python Table_Plans.py
     ```
@@ -33,7 +31,7 @@ This Python script helps to automatically create seating arrangements for differ
 
 ## Input CSV File Format
 
-The script needs a CSV file with the following columns, in this order. Please refer to `Example_Plan.csv` for a practical example and use `blank_template.csv` to create your own file.
+The script needs a CSV file with the following columns, in this order. Please refer to `Example_Plan.csv` for a practical example and use `Blank_Plan.csv` to create your own file.
 
 1.  `name`: The full name of the person.
     * Example: `John Smith`
@@ -47,16 +45,16 @@ The script needs a CSV file with the following columns, in this order. Please re
     * Example (no preferences): ``
 5.  **Meal Columns (e.g., `Breakfast`, `Lunch`, `Evening Dinner`):**
     * After the `preferred people` column, add one column for each meal you are planning.
-    * The header of the column will be used as the meal name. If the header is multiple words (e.g., 'Evening Dinner'), the script generally uses the last word ('Dinner') as the meal ID. Single word headers like 'Lunch' are used as is.
+    * The **full header of the column** (e.g., `Breakfast Club Meeting`, `Annual Charity Dinner`, `Lunch`) will be used as the meal name/ID. Any leading or trailing spaces in the header will be removed.
     * In each person's row, put `yes` (case-insensitive) in a meal column if they are attending that meal. If they are not attending, you can leave it blank or put any other text.
 
-**For a complete example of how the data should look, please open and review the `Example_Plan.csv` file included in this project.**
+For a complete example of how the data should look, please open and review the `Example_Plan.csv` file included in this project.
 
 ## Output
 
 The script will print the seating arrangements to your terminal. For each meal, you'll see:
 
-* **A summary** of whether a plan was found.
+* A summary of whether a plan was found.
 * **List View:** Details of who is sitting next to whom, with indicators:
     * `(P*)`: Preferred people sitting together.
     * `(R!)`: Related people sitting together (this is penalised).
@@ -66,12 +64,12 @@ The script will print the seating arrangements to your terminal. For each meal, 
 
 ## Customisation
 
-The way the script decides on the "best" arrangement is based on scores. These scores (penalties and bonuses) are set as constants at the top of the Python script (e.g., `BONUS_PREFERRED`, `PENALTY_RELATION`). You can change these numbers in the script if you want to make certain rules more or less important.
+The way the script decides on the "best" arrangement is based on scores. These scores (penalties and bonuses) are set as constants at the top of the Python script (`Table_Plans.py` - e.g., `BONUS_PREFERRED`, `PENALTY_RELATION`). You can change these numbers in the script if you want to make certain rules more or less important.
 
 ## Possible Future Ideas
 
 * The script currently finds one arrangement per meal if possible. It could be changed to find several different options.
----
 
-*This README was generated based on the script's functionality.*
+---
+This README was generated based on the script's functionality and then amended by the author
 *Author: TFortescue*
