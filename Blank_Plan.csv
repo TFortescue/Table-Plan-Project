@@ -1,0 +1,15 @@
+name,sex,relations,preferred people,meal 1,meal 2,meal 3
+Olivia,female,"Duncan","Tom",Yes,No,Yes
+Sophia,female,"James","",Yes,No,Yes
+Amelia,female,"Tom","",Yes,Yes,Yes
+Weez,female,"Brian","",Yes,Yes,Yes
+Sofia,female,"Peter","",Yes,No,Yes
+Ophelia,female,"Ian, Duncan","",Yes,Yes,No
+Nell,female,"Jake","Brian",Yes,Yes,Yes
+Duncan,male,"Olivia, Ophelia","",Yes,Yes,No
+James,male,"Sophia","",Yes,Yes,No
+Tom,male,"Amelia","",Yes,Yes,Yes
+Brian,male,"Weez","Amelia",Yes,Yes,Yes
+Peter,male,"Sofia","",Yes,No,Yes
+Ian,male,"Ophelia","",Yes,No,Yes
+Jake,male,"Nell","",Yes,Yes,Yes
