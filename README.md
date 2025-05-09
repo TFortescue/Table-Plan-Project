@@ -71,6 +71,6 @@ The way the script decides on the "best" arrangement is based on scores. These s
 * The script currently finds one arrangement per meal if possible. It could be changed to find several different options.
 
 ---
-This README was generated based on the script's functionality and then amended by the author
+This README was generated with assistance to describe the script's functionality and then reviewed and amended by the author.
 
 *Author: TFortescue*
