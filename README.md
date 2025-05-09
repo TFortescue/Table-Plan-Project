@@ -72,4 +72,5 @@ The way the script decides on the "best" arrangement is based on scores. These s
 
 ---
 This README was generated based on the script's functionality and then amended by the author
+
 *Author: TFortescue*
